@@ -1,14 +1,16 @@
-package org.Registration;
+package org.Mus.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
+
 public class user {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +24,14 @@ public class user {
 	
 	@Column(nullable = false, length = 45)
 	private String Fullname;
+	
+	public user() {}
+	public user(String email, String password,String Fullname) 
+	{
+		this.email=email;
+		this.password=password;
+		this.Fullname=Fullname;
+	}
 	
 	public long getId() {
 		return id;

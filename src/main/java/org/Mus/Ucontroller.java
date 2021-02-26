@@ -1,13 +1,12 @@
 package org.Mus;
 
+import org.Mus.entities.Candidat;
 import org.Mus.entities.Recruiter;
 import org.Mus.entities.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class Ucontroller {
@@ -31,12 +30,17 @@ public class Ucontroller {
 		model.addAttribute("recruiter", new Recruiter());
 		return "recruiter/RecruiterProfile";
 	}
-	
+	@GetMapping("/CandidatProfile")
+	public String form(Model model) {
+		model.addAttribute("candidat",new Candidat());
+		return "candidat/CandidatProfile";}
+
 	//handling part
 	@PostMapping("/process_register")
 	public String processRegistration(user user) {
 		repo.save(user);
 		return "Registration_succed";
 	}
+
 
 }

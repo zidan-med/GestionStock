@@ -62,7 +62,7 @@ public class Recruiter  implements Serializable  {
 	
 	
 	
-	 public Long getId_recruiter() {
+	public Long getId_recruiter() {
 		return id_recruiter;
 	}
 	public void setId_recruiter(Long id_recruiter) {

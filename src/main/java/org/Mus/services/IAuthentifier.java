@@ -1,4 +1,4 @@
-package org.jobs.metier;
+package org.Mus.services;
 
 public interface IAuthentifier {
 }

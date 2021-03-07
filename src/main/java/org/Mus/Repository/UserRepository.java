@@ -1,8 +1,8 @@
-package org.Mus;
+package org.Mus.Repository;
 
-import org.Mus.entities.user;
+import org.Mus.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface userRepository extends JpaRepository<user, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
 }

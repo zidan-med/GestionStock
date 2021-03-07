@@ -13,13 +13,19 @@ import java.io.Serializable;
 @Entity
 public class Langue implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false, nullable = false)
     private Long langue_id;
     private String langue_nom;
     private String langue_niveau;
-    @ManyToOne
-    @JoinColumn(name = "id_langue", insertable = false, updatable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_candidat",referencedColumnName ="candidat_id", insertable = false, updatable = false)
     private Candidat candidat;
-    private Long langueid;
+
+    public Candidat getCandidat() {
+        return candidat;
+    }
+    public void setCandidat(Candidat candidat) {
+        this.candidat = candidat;
+    }
 }

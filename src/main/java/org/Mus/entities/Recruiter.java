@@ -1,16 +1,12 @@
 package org.Mus.entities;
 import java.io.Serializable;
-import java.util.Collection;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -36,14 +32,14 @@ public class Recruiter  implements Serializable  {
 	private String recruiter_lastname;
 	@OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_user")
-    private user user;
+    private User user;
 	/*@OneToMany(mappedBy="Recruiter", fetch=FetchType.LAZY)
 	private Collection<Recruiter> recruiters;*/
 	
-	public user getUser() {
+	public User getUser() {
 		return user;
 	}
-	public void setUser(user user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 	public Recruiter() {}

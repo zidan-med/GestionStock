@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "users")
 
-public class user {
+public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -25,8 +25,8 @@ public class user {
 	@Column(nullable = false, length = 45)
 	private String Fullname;
 	
-	public user() {}
-	public user(String email, String password,String Fullname) 
+	public User() {}
+	public User(String email, String password, String Fullname)
 	{
 		this.email=email;
 		this.password=password;

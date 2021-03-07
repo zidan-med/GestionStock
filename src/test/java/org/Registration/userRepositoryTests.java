@@ -2,8 +2,8 @@ package org.Registration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.Mus.userRepository;
-import org.Mus.entities.user;
+import org.Mus.Repository.UserRepository;
+import org.Mus.entities.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -18,21 +18,21 @@ import org.springframework.test.annotation.Rollback;
 public class userRepositoryTests {
 	
 	@Autowired
-	private userRepository repo;
+	private UserRepository repo;
 	
 	@Autowired
 	private TestEntityManager entityManager;
 	
 	@Test
 	public void textCreateUser() {
-		user user = new user();
+		User user = new User();
 		user.setEmail("zidi.wahranip@tnaket.ma");
 		user.setPassword("zid45.2020");
 		user.setFullname("Zidann1 B3abe3");
 		
-		user saveduser = repo.save(user);
+		User saveduser = repo.save(user);
 		
-		user existUser = entityManager.find(user.class, saveduser.getId());
+		User existUser = entityManager.find(User.class, saveduser.getId());
 		
 		assertThat(existUser.getEmail()).isEqualTo(user.getEmail());
 	}

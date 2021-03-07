@@ -16,41 +16,41 @@ import java.util.List;
 public class Candidat implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(updatable = false, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Column(updatable = false, nullable = false)
     private Long candidat_id;
-    @Column(updatable = false, nullable = false)
+    //@Column(updatable = false, nullable = false)
     private String candidat_profil;
-    @Column(updatable = false, nullable = false)
+    //@Column(updatable = false, nullable = false)
     private String candidat_nom;
-    @Column(updatable = false, nullable = false)
+    //@Column(updatable = false, nullable = false)
     private String candidat_prenom;
-    @Column(updatable = false, nullable = false)
+    //@Column(updatable = false, nullable = false)
     private String candidat_sex;
-    @Column(updatable = false, nullable = false)
+    //@Column(updatable = false, nullable = false)
     private String candidat_email;
-    @Column(updatable = false, nullable = false)
+    //@Column(updatable = false, nullable = false)
     private String candidat_adresse;
     //@Column(updatable = false, nullable = false)
     //private String candidat_code_postal;
-    @Column(updatable = false, nullable = false)
+    //@Column(updatable = false, nullable = false)
     private String candidat_ville;
-    @Column(updatable = false, nullable = false)
+    //@Column(updatable = false, nullable = false)
     private String candidat_pays;
-    @Column(updatable = false, nullable = false)
+    //@Column(updatable = false, nullable = false)
     private String candidat_date_naissance;
-    @Column(updatable = false, nullable = false)
+    //@Column(updatable = false, nullable = false)
     private byte[] candidat_image;
-    @Column(updatable = false, nullable = false)
+    //@Column(updatable = false, nullable = false)
     private String candidat_phone;
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_user")
-    private user user;
+    @JoinColumn(name = "id_user",referencedColumnName ="id")
+    private User user;
 
-    public user getUser() {
+    public User getUser() {
         return user;
     }
-    public void setUser(user user) {
+    public void setUser(User user) {
         this.user = user;
     }
 

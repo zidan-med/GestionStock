@@ -4,96 +4,51 @@
     <meta charset="UTF-8">
     <title>Completer Votre Profile</title>
     <link rel = "stylesheet" type = "text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 
 </head>
 <body>
-        <div class = "container text-center">
-            <fieldset>
-                <legend>Votre identité:</legend>
-                <form th:action="@{/save_candidat}" method="post"
-                      th:object="${candidat}">
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label >Nom</label>
-                                <input class="form-control" type="text" name="" placeholder="Entrer votre nom" th:field ="*{candidat_nom}">
-                            </div>
-                            <div class="col-md-6">
-                                <label >Prénom</label>
-                                <input class="form-control" type="text" name="" placeholder="Entrer votre prénom" th:field ="*{candidat_prenom}" >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label >Mail</label>
-                                <input class="form-control" type="text" name="" placeholder="Entrer votre mail" th:field="*{candidat_email}">
-                            </div>
-                            <div class="col-md-6">
-                                <label >Numéro</label>
-                                <input  class="form-control" type="text" name="" placeholder="Entrer votre numéro" th:field="*{candidat_phone}">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label >Profil</label>
-                                <input  class="form-control" type="text" name="" placeholder="quel est votre profil" th:field ="*{candidat_profil}">
-                            </div>
-                            <div class="col-md-6">
-                                <label>Naissance</label>
-                                <input class="form-control" type="date"  th:field="*{candidat_date_naissance}">
+<header class="header">
+    <h1 class="header__title">Création de mon profile</h1>
+</header>
+    <div class="container overflow-hidden">
+        <div class="multisteps-form">
+            <div class="row">
+                <div class="col-12 col-lg-8 m-auto">
+                    <form class="multisteps-form__form" th:action="@{/save_experience}" method="post"
+                          th:object="${experience}">
+                        <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
+                            <h3 class="multisteps-form__title">Experience professionnelle</h3>
+                            <div class="multisteps-form__content">
+                                <div class="form-row mt-4">
+                                    <div class="col-12 col-sm-6">
+                                        <input class="multisteps-form__input form-control" type="text" placeholder="poster occuper" th:field ="*{experience_poste}"/>
+                                    </div>
+                                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                        <input class="multisteps-form__input form-control" type="text" placeholder="activite" th:field ="*{secteur_activite}"/>
+                                    </div>
+                                </div>
+                                <div class="form-row mt-4">
+                                    <div class="col-12 col-sm-6">
+                                        <label class="form-label">date de début</label>
+                                        <input class="form-control" type="date" th:field="*{experience_debut}"/>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <label class="form-label">date de fin</label>
+                                        <input class="form-control" type="date" th:field="*{experience_fin}"/>
+                                    </div>
+                                </div>
+                                <div class="form-row mt-4">
+                                    <button type="submit" class="btn btn-primary">sauvgarder</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Adresse</label>
-                                <input class="form-control" type="text" name="" placeholder="Entrer votre adresse" th:field="*{candidat_adresse}">
-                            </div>
-                            <div class="col-md-6">
-                                <label>Ville</label>
-                                <input class="form-control" type="text" name="" placeholder="Entrer votre ville" th:field="*{candidat_ville}">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Pays</label>
-                                <input class="form-control" type="text" name="" placeholder="Entrer votre pays" th:field="*{candidat_pays}">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="formFile" class="form-label">Default file input example</label>
-                                <input class="form-control" type="file" id="formFile" th:field="*{candidat_image}">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Sexe</label>
-                        <input type="radio" id="h" name="sexe" value="Masculin" th:field ="*{candidat_sex}"/>
-                        <label for="h">Masculin</label>
-                        <input type="radio" id="f" name="sexe" value="Féminin" th:field ="*{candidat_sex}"/>
-                        <label for="f">Féminin</label>
-                    </div>
-
-                    <div class="panel-footer">
-                        <button type="submit" class="btn btn-primary">sauvgarder</button>
-                    </div>
-                </form>
-            </fieldset>
-            <fieldset>
-                <form th:action="@{/save_fromation}" method="post"
-                      th:object="${formation}">
-                    <div>
-
-
-                    </div>
-                </form>
-            </fieldset>
+                    </form>
+                </div>
+            </div>
         </div>
+    </div>
 </body>
 </html>

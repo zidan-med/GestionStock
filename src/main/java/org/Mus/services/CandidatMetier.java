@@ -1,21 +1,24 @@
-package org.jobs.metier;
+package org.Mus.services;
 
-
-import org.jobs.entities.Competence;
-import org.jobs.entities.Experience;
-import org.jobs.entities.Formation;
-import org.jobs.entities.Langue;
+import org.Mus.entities.*;
 
 import java.util.List;
 
 public interface CandidatMetier {
+
+    public void createCandidat(Candidat candidat);
+
+    public void deleteCandidat(Long candidat_id);
+
+    public void updateCandidat(Candidat candidat,Long candidat_id);
+
     public void createLangue(Langue langue);
 
     public void updateLangue(Long langue_id,Langue langue);
 
     public void deleteLangue(Long langue_id);
 
-    public List<Langue> getAllLangueByCandidate();
+    public List<Langue> getAllLangueByCandidatId();
 
     public void createFormation(Formation formation);
 
@@ -23,15 +26,15 @@ public interface CandidatMetier {
 
     public void deleteFormation(Long formation_id);
 
-    public List<Formation> getAllFormationByCandidate();
+    public List<Formation> getAllFormationByCandidatId();
 
-    public void createComptence(Competence comptence);
+    public void createCompetence(Competence comptence);
 
-    public void updateComptence(Long competence_id,Competence competence);
+    public void updateCompetence(Long competence_id,Competence competence);
 
-    public void deleteComptence(Long competence_id);
+    public void deleteCompetence(Long competence_id);
 
-    public List<Competence> getAllComptenceByCandidat();
+    public List<Competence> getAllCompetenceByCandidatId();
 
     public void createExperience(Experience experience);
 
@@ -39,7 +42,7 @@ public interface CandidatMetier {
 
     public void deleteExperience(Long experience_id);
 
-    public List<Experience> getAllExperienceByCandidate();
+    public List<Experience> getAllExperienceByCandidatId();
 
 
 

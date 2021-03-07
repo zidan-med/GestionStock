@@ -5,166 +5,201 @@
   <title>Bootstrap Multi Step Form</title>
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+
 </head>
 <body>
 
 <header class="header">
-  <h1 class="header__title">Multi Steps Form Animations</h1>
+<h1 class="header__title">Création de mon profile</h1>
 </header>
-<div class="content">
-  <div class="content__inner">
-    <div class="container">
-      <h2 class="content__title content__title--m-sm">Choose Animation Title</h2>
-      <form class="pick-animation my-4">
-        <div class="form-row">
-          <div class="col-5 m-auto">
-            <select class="pick-animation__select form-control">
-              <option value="scaleIn" selected="selected">ScaleIn</option>
-              <option value="data">data</option>
-              <option value="slideHorz">SlideHorz</option>
-              <option value="slideVert">SlideVert</option>
-              <option value="fadeIn">FadeIn</option>
-            </select>
-          </div>
-        </div>
-      </form>
-
-      <h2 class="content__title">Click on steps or 'Prev' and 'Next' buttons</h2>
-    </div>
-    <div class="container overflow-hidden">
-      <div class="multisteps-form">
+<div class="container overflow-hidden">
+    <div class="multisteps-form">
         <div class="row">
           <div class="col-12 col-lg-8 ml-auto mr-auto mb-4">
             <div class="multisteps-form__progress">
-              <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">User Info</button>
+              <button class="multisteps-form__progress-btn js-active" type="button" title="Information">Information</button>
               <button class="multisteps-form__progress-btn" type="button" title="Formation">Formation</button>
-              <button class="multisteps-form__progress-btn" type="button" title="Order Info">Order Info</button>
-              <button class="multisteps-form__progress-btn" type="button" title="Message">Message        </button>
+              <button class="multisteps-form__progress-btn" type="button" title="Experience">Experience</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Competence">Competence</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Langue">Langue</button>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-12 col-lg-8 m-auto">
-            <form class="multisteps-form__form">
-              <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
-                <h3 class="multisteps-form__title">Your admin Info</h3>
-                <div class="multisteps-form__content">
-                  <div class="form-row mt-4">
-                    <div class="col-12 col-sm-6">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="First Name"/>
-                    </div>
-                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="Last Name"/>
-                    </div>
-                  </div>
-                  <div class="form-row mt-4">
-                    <div class="col-12 col-sm-6">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="Login"/>
-                    </div>
-                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                      <input class="multisteps-form__input form-control" type="email" placeholder="Email"/>
-                    </div>
-                  </div>
-                  <div class="form-row mt-4">
-                    <div class="col-12 col-sm-6">
-                      <input class="multisteps-form__input form-control" type="password" placeholder="Password"/>
-                    </div>
-                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                      <input class="multisteps-form__input form-control" type="password" placeholder="Repeat Password"/>
-                    </div>
-                  </div>
-                  <div class="button-row d-flex mt-4">
-                    <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                <h3 class="multisteps-form__title">Your Address</h3>
-                <div class="multisteps-form__content">
-                  <div class="form-row mt-4">
-                    <div class="col">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="Address 1"/>
-                    </div>
-                  </div>
-                  <div class="form-row mt-4">
-                    <div class="col">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="Address 2"/>
-                    </div>
-                  </div>
-                  <div class="form-row mt-4">
-                    <div class="col-12 col-sm-6">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="City"/>
-                    </div>
-                    <div class="col-6 col-sm-3 mt-4 mt-sm-0">
-                      <select class="multisteps-form__select form-control">
-                        <option selected="selected">State...</option>
-                        <option>...</option>
-                      </select>
-                    </div>
-                    <div class="col-6 col-sm-3 mt-4 mt-sm-0">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="Zip"/>
-                    </div>
-                  </div>
-                  <div class="button-row d-flex mt-4">
-                    <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-                    <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                <h3 class="multisteps-form__title">Your Order Info</h3>
-                <div class="multisteps-form__content">
-                  <div class="row">
-                    <div class="col-12 col-md-6 mt-4">
-                      <div class="card shadow-sm">
-                        <div class="card-body">
-                          <h5 class="card-title">Item Title</h5>
-                          <p class="card-text">Small and nice item description</p><a class="btn btn-primary" href="#" title="Item Link">Item Link</a>
+            <div class="col-12 col-lg-8 m-auto">
+                <form class="multisteps-form__form" >
+                    <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
+                        <h3 class="multisteps-form__title">Informations personnelles</h3>
+                        <div class="multisteps-form__content">
+                            <div class="form-row mt-4">
+                                <div class="col-12 col-sm-6">
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="Entrer votre nom"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="Entrer votre prénom"/>
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="col-12 col-sm-6">
+                                    <input class="multisteps-form__input form-control" type="email" placeholder="Entrer votre mail"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                    <input class="multisteps-form__input form-control" type="tel" placeholder="Entrer votre numéro"/>
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="col-12 col-sm-6">
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="Entrer votre profil"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                   <input class="form-control" type="text" name="" placeholder="Entrer votre adresse"/>
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="col-12 col-sm-6">
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="Entrer votre ville"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="Entrer votre pays"/>
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="col-12 col-sm-6">
+                                    <label for="formFile" class="form-label">date de naissance</label>
+                                    <input class="form-control" type="date" placeholder="Entrer votre age"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                    <label for="formFile" class="form-label">image CV</label>
+                                    <input class="form-control" type="file" id="formFile" >
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="col-12 col-sm-6 ">
+                                    <input type="radio" id="h" name="sexe" value="Masculin"/>
+                                    <label for="h">Masculin</label>
+                                    <input type="radio" id="f" name="sexe" value="Féminin" />
+                                    <label for="f">Féminin</label>
+                                </div>
+                            </div>
+                            <div class="button-row d-flex mt-4">
+                                <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                    <div class="col-12 col-md-6 mt-4">
-                      <div class="card shadow-sm">
-                        <div class="card-body">
-                          <h5 class="card-title">Item Title</h5>
-                          <p class="card-text">Small and nice item description</p><a class="btn btn-primary" href="#" title="Item Link">Item Link</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="button-row d-flex mt-4 col-12">
-                      <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-                      <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                <h3 class="multisteps-form__title">Additional Message</h3>
-                <div class="multisteps-form__content">
-                  <div class="form-row mt-4">
-                    <textarea class="multisteps-form__textarea form-control" placeholder="Additional Message and Questions"></textarea>
-                  </div>
-                  <div class="button-row d-flex mt-4">
-                    <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-                    <button class="btn btn-success ml-auto" type="button" title="go">go</button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
+                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                        <h3 class="multisteps-form__title">Formation et diplome</h3>
+                        <div class="multisteps-form__content">
+                            <div class="form-row mt-4">
+                                <div class="col">
+                                  <input class="multisteps-form__input form-control" type="text" placeholder="tite de diplome "/>
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="col-12 col-sm-6">
+                                  <input class="multisteps-form__input form-control" type="text" placeholder="etablissement"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                  <input class="form-control" type="text" placeholder="ville"/>
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                  <label for="f">Début</label>
+                                  <input class="form-control" type="date"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                  <label for="f">Fin</label>
+                                  <input class="form-control" type="date"/>
+                                </div>
+                            </div>
+                            <div class="button-row d-flex mt-4">
+                                <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                                <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                        <h3 class="multisteps-form__title">Experience professionnelle</h3>
+                        <div class="multisteps-form__content">
+                            <div class="form-row mt-4">
+                                <div class="col">
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="Poste occuper"/>
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="col-12 col-sm-6">
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="secteur d'activite"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="nom d'entreprise"/>
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                    <label for="f">Début</label>
+                                    <input class="form-control" type="date"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                    <label for="f">Fin</label>
+                                    <input class="form-control" type="date"/>
+                                </div>
+                            </div>
+                            <div class="button-row d-flex mt-4">
+                              <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                              <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                        <h3 class="multisteps-form__title">Competence</h3>
+                        <div class="multisteps-form__content">
+                            <div class="form-row mt-4">
+                                <div class="col">
+                                  <textarea class="form-control" id="exampleFormControlTextarea3" rows="7" placeholder="Description..."></textarea>
+                                </div>
+                            </div>
+                            <div class="button-row d-flex mt-4">
+                                <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                                <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                        <h3 class="multisteps-form__title">Langue</h3>
+                        <div class="multisteps-form__content">
+                            <div class="form-row mt-4">
+                                <div class="form-row mt-4">
+                                    <div class="col-12 col-sm-6">
+                                      <input class="multisteps-form__input form-control" type="text" placeholder="Langue"/>
+                                    </div>
+                                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                        <select class="multisteps-form__select form-control">
+                                            <option selected>quel est votre niveau</option>
+                                            <option value="1">intermédiaire</option>
+                                            <option value="2">Courant</option>
+                                            <option value="3">langue maternelle</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-row d-flex mt-4">
+                                <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                                <button class="btn btn-success ml-auto" type="button" title="go">go</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
   </div>
-</div>
-
-<script  src="function.js"></script>
-
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+        src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/function.js"></script>
 </body>
 </html>

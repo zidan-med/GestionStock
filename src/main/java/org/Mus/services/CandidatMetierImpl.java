@@ -1,22 +1,44 @@
-package org.jobs.metier;
+package org.Mus.services;
 
-import org.jobs.dao.*;
-import org.jobs.entities.Competence;
-import org.jobs.entities.Experience;
-import org.jobs.entities.Formation;
-import org.jobs.entities.Langue;
+
+
+import org.Mus.Repository.*;
+import org.Mus.entities.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service
 public class CandidatMetierImpl implements CandidatMetier {
-
+    @Autowired
     CandidatRepository candidatRepository;
+    @Autowired
     CompetenceRepository competenceRepository;
+    @Autowired
     FormationRepository formationRepository;
+    @Autowired
     ExperienceRepository experienceRepository;
+    @Autowired
     LangueRepository langueRepository;
 
+
+    @Override
+    public void createCandidat(Candidat candidat) {
+        candidatRepository.save(candidat);
+    }
+
+    @Override
+    public void deleteCandidat(Long candidat_id) {
+        candidatRepository.deleteById(candidat_id);
+
+    }
+
+    @Override
+    public void updateCandidat(Candidat candidat, Long candidat_id) {
+        candidatRepository.save(candidat);
+
+    }
 
     @Override
     public void createLangue(Langue langue) {
@@ -36,7 +58,7 @@ public class CandidatMetierImpl implements CandidatMetier {
     }
 
     @Override
-    public List<Langue> getAllLangueByCandidate() {
+    public List<Langue> getAllLangueByCandidatId() {
 
         return langueRepository.findAll();
     }
@@ -60,48 +82,53 @@ public class CandidatMetierImpl implements CandidatMetier {
     }
 
     @Override
-    public List<Formation> getAllFormationByCandidate() {
+    public List<Formation> getAllFormationByCandidatId() {
         return formationRepository.findAll();
     }
 
     @Override
-    public void createComptence(Competence comptence) {
+    public void createCompetence(Competence comptence) {
         competenceRepository.save(comptence);
 
     }
 
     @Override
-    public void updateComptence(Long competence_id, Competence competence) {
+    public void updateCompetence(Long competence_id, Competence competence) {
+        competenceRepository.save(competence);
 
     }
 
     @Override
-    public void deleteComptence(Long competence_id) {
+    public void deleteCompetence(Long competence_id) {
+        competenceRepository.deleteById(competence_id);
 
     }
 
     @Override
-    public List<Competence> getAllComptenceByCandidat() {
-        return null;
+    public List<Competence> getAllCompetenceByCandidatId() {
+
+        return competenceRepository.findAll();
     }
 
     @Override
     public void createExperience(Experience experience) {
+        experienceRepository.save(experience);
 
     }
 
     @Override
     public void updateExperience(Long experience_id, Experience experience) {
-
+        experienceRepository.save(experience);
     }
 
     @Override
     public void deleteExperience(Long experience_id) {
+        experienceRepository.deleteById(experience_id);
 
     }
 
     @Override
-    public List<Experience> getAllExperienceByCandidate() {
-        return null;
+    public List<Experience> getAllExperienceByCandidatId() {
+        return experienceRepository.findAll();
     }
 }

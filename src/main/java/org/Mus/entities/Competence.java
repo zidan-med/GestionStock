@@ -13,12 +13,17 @@ import java.io.Serializable;
 @Entity
 public class Competence implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false, nullable = false)
     private Long competence_id;
     private String description;
-    @ManyToOne()
-    @JoinColumn(name = "id_competence", insertable = false, updatable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_candidat",referencedColumnName ="candidat_id", insertable = false, updatable = false)
     private Candidat candidat;
-    private Long competenceid;
+    public Candidat getCandidat() {
+        return candidat;
+    }
+    public void setCandidat(Candidat candidat) {
+        this.candidat = candidat;
+    }
 }

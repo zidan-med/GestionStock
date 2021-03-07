@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Completer Votre Profile</title>
+    <link rel = "stylesheet" type = "text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+
+</head>
+<body>
+        <div class = "container text-center">
+            <fieldset>
+                <legend>Competences :</legend>
+                <form th:action="@{/save_competence}" method="post"
+                      th:object="${competence}">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea3">Rounded corners</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea3" rows="7" th:field ="*{description}"></textarea>
+                    </div>
+
+                    <div class="panel-footer">
+                        <button type="submit" class="btn btn-primary">sauvgarder</button>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+</body>
+</html>
+

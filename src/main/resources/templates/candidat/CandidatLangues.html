@@ -22,18 +22,19 @@
                     <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
                         <h3 class="multisteps-form__title">Langues</h3>
                         <div class="multisteps-form__content">
-                            <div class="col-12 col-sm-6">
-                                <input class="multisteps-form__input form-control" type="text" placeholder="Langue" th:field ="*{langue_nom}"/>
-                            </div>
-                            <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                <select class="multisteps-form__select form-control">
-                                    <option selected>Open this select menu</option>
-                                    <option value="1" th:field ="*{langue_niveau}">notions</option>
-                                    <option value="2" th:field ="*{langue_niveau}">courant</option>
-                                    <option value="3" th:field ="*{langue_niveau}">langue maternelle</option>
-                                </select>
-                            </div>
-                            <div class="form-row col-12">
+                            <div class="form-row mt-4">
+                                <div class="col-12 col-sm-6">
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="Langue" th:field ="*{langue_nom}"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                    <select class="multisteps-form__select form-control">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1" th:field ="*{langue_niveau}">notions</option>
+                                        <option value="2" th:field ="*{langue_niveau}">courant</option>
+                                        <option value="3" th:field ="*{langue_niveau}">langue maternelle</option>
+                                    </select>
+                                </div>
+                            <div class="form-row mt-4">
                                 <button type="submit" class="btn btn-primary">sauvgarder</button>
                             </div>
                         </div>
